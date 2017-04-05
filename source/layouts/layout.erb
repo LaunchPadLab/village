@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <%= partial 'partials/og-tags' %>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <%= favicon_tag 'images/favicon.png' %>
+    <meta property="og:title" content="Village" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.website.com" />
+    <meta property="og:image" content="http://getvillage.us/images/village.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag :application %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <%= partial 'partials/navigation' %>
+
+    <%= yield %>
+    <%= partial 'partials/footer' %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <%= javascript_include_tag :all %>
+  </body>
+</html>

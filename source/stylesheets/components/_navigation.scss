@@ -1,0 +1,164 @@
+// Site Navigation Styles
+// ========================================
+$mobile-nav-height: 58px;
+$desktop-nav-height: 81px;
+
+.navigation {
+  @include rem(padding, 20px 20px);
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &.active{
+    background-color: $grey-dark;
+  }
+}
+
+
+/*-----------------------
+Logo
+-----------------------*/
+.logo{
+  @include rem(margin-bottom, 0px);
+
+  @include media($tablet) {
+    float: left;
+  }
+
+  a{
+    font-weight: 900;
+    color: $white-base;
+    @include s-bigger;
+
+    &:after{
+      content: "BETA";
+      font-size: 10px;
+      @include rem(margin-left, 5px);
+      vertical-align: 5px;
+    }
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+/*-----------------------
+Primary Nav
+-----------------------*/
+.navigation{
+  @include position(absolute, 0px null null null);
+  @include transition(all 0.3s ease-in-out);
+  width: 100%;
+  z-index: 9999;
+
+  .navigation-menu{
+    text-align: right;
+    float: right;
+    @include mobile-hide;
+  }
+
+  li {
+    display: inline-block;
+    @include rem(margin, 0 0 0 25px);
+    vertical-align: -webkit-baseline-middle;
+
+    a{
+      color: $white-base;
+      font-weight: 900;
+      @include s-base;
+      letter-spacing: 0px;
+
+      &:hover{
+        color: $white-base;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/*-----------------------
+Mobile Nav Overlay
+-----------------------*/
+
+.navigation-menu{
+  @keyframes fadeIn { to { opacity: 1; } }
+  @include animation(fadeIn .3s ease-in 1 forwards);
+  display: none;
+  opacity: 0;
+
+  @include media($tablet) {
+    @include animation(none);
+    opacity: 1;
+    display: block;
+  }
+
+  a{
+    @include media($tablet) {
+      @include s-tiny;
+      color: $grey-base;
+      letter-spacing: 1px;
+      font-weight: bold;
+
+      &:hover{ color: $grey-dark; }
+    }
+
+    @include media($tablet-landscape) {
+      @include s-small;
+    }
+  }
+
+  &.active{
+    background-color: rgba($black-dark, 0.95);
+    display: block;
+    height: 100%;
+    @include position(fixed, 0px null null null);
+    width: 100%;
+    z-index: 3;
+
+    .nav-link{
+      text-align: center;
+      @include s-large;
+      display: block;
+      width: 100%;
+      margin: 0;
+
+      a{
+        color: $white-base;
+        display: block;
+        @include rem(padding, 20px 0);
+
+      }
+      &:hover{
+        background-color: $white-base;
+        a:not(.button-red-base){ color: $black-base; }
+      }
+    }
+  }
+}
+
+// Open and Close Buttons
+.nav-open, .nav-close{
+  cursor: pointer;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover{ opacity: 0.8; }
+  @include media($tablet) { display: none; }
+}
+
+.nav-open{
+  background-image: url('../images/sprite1.svg');
+  background-position: -330px 0;
+  background-size: 630px 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.nav-open{
+  @include position(absolute, 13px 20px null null);
+  z-index: 2;
+}
+
+.nav-close{
+  @include rem(margin, 13px 20px 0 0);
+}

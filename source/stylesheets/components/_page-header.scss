@@ -1,0 +1,186 @@
+.page-header {
+  background-color: $green-base;
+  background: linear-gradient(135deg, $green-base 50%, $green-dark 51%);
+  height: 100%;
+  background-size: cover;
+  @include rem(padding, 20px);
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @include media($tablet) {
+    height: 600px;
+  }
+
+  @include media($tablet-landscape) {
+    height: 500px;
+  }
+
+  h1, p { color: $white-base;  }
+
+  &:after{
+    @include media($tablet){
+      background: linear-gradient(135deg, $green-base 40%, $green-dark 41%);
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 110%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transform: skewY(-4.5deg);
+      z-index: -1;
+      transform-origin:100%  0;
+      z-index: -1;
+    }
+  }
+
+  &:before{
+    @include media($tablet){
+      background-color: $green-base;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 16%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transform: skewY(-4.5deg);
+      z-index: -1;
+      transform-origin:100%  0;
+      background-image: linear-gradient(-291deg, white 0%, white 50%, #7ADDA1 82%);
+      z-index: 3;
+    }
+  }
+}
+
+.page-header{
+  @include rem(padding, 20px 0);
+  position: relative;
+
+  .header-text{
+    @include rem(margin-top, 30px);
+    display: inline-block;
+    max-width: 900px;
+    text-align: left;
+
+    @include media($tablet-landscape){
+      @include rem(margin-top, 0px);
+    }
+
+    h1{
+      max-width: 580px;
+      text-align: center;
+      @include rem(margin-top, 30px);
+
+      @include media($tablet){
+        text-align: left;
+      }
+
+      @include media($tablet-landscape){
+        @include rem(margin-top, 10px);
+      }
+    }
+  }
+
+  &:after{
+    content: "";
+    z-index: -1;
+  }
+}
+
+.call-to-action{
+  text-align: center;
+
+  @include media($tablet){
+    text-align: left;
+  }
+
+  a{
+    @include rem(margin, 20px 10px 0px);
+
+    @include media($tablet){
+      @include rem(margin, 20px 10px 0px 0px);
+    }
+  }
+}
+
+@keyframes fade-in-up{
+  0%{ opacity:0; @include transform(translateY(0%) translateX(-50%)); }
+  100%{ opacity:1; @include transform(translateY(-50%) translateX(-50%));}
+}
+
+@keyframes fade-in-right{
+  0%{ opacity:0; @include transform(translateX(50%)); }
+  100%{ opacity:1; @include transform(translateX(0%));}
+}
+
+@keyframes fade-in-left{
+  0%{ opacity:0; @include transform(translateX(-50%)); }
+  100%{ opacity:1; @include transform(translateX(0%));}
+}
+
+@keyframes slide-in-right{
+  0%{ @include transform(translateX(100%)); }
+  100%{ @include transform(translateX(0%));}
+}
+
+@keyframes slide-in-left{
+  0%{ @include transform(translateX(-100%)); }
+  100%{ @include transform(translateX(0%));}
+}
+
+
+.app-shots{
+  @include media($tablet){
+    @include position(absolute, null -200px -110% null);
+     width: 64%;
+    z-index: 9;
+  }
+
+  @include media($tablet-landscape) {
+    @include position(absolute, 20% -200px -25% null);
+    width: 60%;
+  }
+}
+
+.phone{
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  z-index: 99;
+
+  @include media($tablet){
+    margin-bottom: -211px;
+  }
+
+  @include media($tablet-landscape) {
+    width: 40%;
+    z-index: 9;
+
+    @include animation(slide-in-right 0.6s ease-in);
+  }
+}
+
+.tablet{
+  display: inline-block;
+  margin-left: -12%;
+  width: 80%;
+  z-index: 88;
+
+  @include media($tablet){
+    margin-left: -3%;
+    width: 119%;
+  }
+
+  @include media($tablet-landscape) {
+    @include animation(slide-in-right 0.6s ease-in);
+    margin-left: 0px;
+    margin-right: -20%;
+    width: 120%;
+  }
+}
+
+.header-village-container{
+  position: relative;
+}

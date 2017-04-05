@@ -1,0 +1,194 @@
+[class*=-village-container]{
+  @include base-padding;
+  @include outer-container;
+  max-width: 1100px;
+}
+
+[class*=-village-wrapper]{
+  background-color: $blue-light;
+}
+
+.subheader{
+  border-bottom: 1px solid $grey-light;
+  @include s-big;
+  @include rem(margin, 30px 0px 40px);
+  @include rem(padding-bottom, 30px);
+  font-style: italic;
+}
+
+.content-area{
+  @include media($tablet){
+    @include span-columns(7 of 12);
+    @include shift(5);
+    @include rem(margin-top, $desktop-nav-height);
+  }
+}
+
+.text-only{
+  @include media($tablet){
+    @include rem(margin-top, $desktop-nav-height);
+    @include span-columns(10 of 12);
+    @include shift(1);
+  }
+
+  @include media($tablet-landscape){
+    @include span-columns(7 of 12);
+    @include shift(2.5);
+  }
+}
+
+
+/*-----------------------
+About
+-----------------------*/
+.about-village-container{
+  .text-block{
+    @include media($tablet){
+      @include span-columns(6 of 12);
+    }
+
+    @include media($tablet-landscape){
+      @include rem(margin-top, 20px);
+    }
+  }
+}
+
+/*-----------------------
+Why
+-----------------------*/
+.why-village-container{
+
+  .about-block{
+    @include rem(margin-bottom, 30px);
+
+    @include media($tablet){
+      @include span-columns(4 of 12);
+      @include rem(margin-bottom, 0px);
+    }
+
+    img{
+      display: inline-block;
+      @include rem(margin-bottom, 10px);
+      height: 100px;
+      width: inherit;
+    }
+
+    p{
+      @include s-medium;
+      line-height: 30px;
+
+      span{
+        border: 1px solid $yellow-base;
+        color: $yellow-base;
+        @include s-tiny;
+        @include rem(padding, 2px 5px);
+        border-radius: 5px;
+      }
+    }
+
+    &:first-child{
+      img{
+        width: 150px;
+      }
+    }
+  }
+}
+
+/*-----------------------
+How it Works
+-----------------------*/
+.how-block{
+  display: inline-block;
+  @include rem(margin-top, 60px);
+  width: 100%;
+  position: relative;
+
+  &:last-child{
+    @include media($tablet-landscape){
+      @include rem(margin-bottom, -110px);
+    }
+  }
+
+  .text-block{
+    @include media($tablet){
+      @include span-columns(6.4 of 12);
+      @include rem(margin-bottom, 0px);
+      @include shift(0.5);
+    }
+  }
+
+  img{
+    @include rem(margin-bottom, 15px);
+
+    @include media($tablet){
+      @include span-columns(5 of 12);
+      @include rem(margin-bottom, 0px);
+      @include animation(fade-in-left 0.6s ease-in);
+    }
+  }
+
+  &:nth-child(even){
+    .text-block{
+      @include media($tablet){
+        @include shift(0);
+      }
+    }
+
+    img{
+      @include media($tablet){
+        @include shift(0.5);
+        float: right;
+        margin-right: 0px;
+        @include animation(fade-in-right 0.6s ease-in);
+
+      }
+    }
+  }
+}
+
+/*-----------------------
+Contact
+-----------------------*/
+.contact-village-container{
+  text-align: center;
+
+  .text-block{
+
+    p{
+      @include media($tablet){
+        @include center;
+        max-width: 650px;
+      }
+    }
+  }
+}
+
+.form-group{
+  @include center;
+  @include rem(margin-top, 20px);
+  max-width: 650px;
+
+  input[type="email"]{
+    float: left;
+
+    @include media($tablet){
+      width: 60%;
+    }
+  }
+
+  input[type="submit"]{
+    background-color: $blue-base;
+    color: $white-base;
+    float: left;
+    margin-right: -1%;
+    width: 100%;
+
+    @include media($tablet){
+      width: 40%;
+    }
+
+    &:hover{
+      background-color: darken($blue-base, 5%);
+    }
+  }
+}
