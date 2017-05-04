@@ -702,7 +702,7 @@ footer {
     .company h6, .company p {
       display: inline-block; } }
 .company h6:after {
-  content: "BETA";
+  content: "EARLY ACCESS";
   font-size: 10px;
   margin-left: 5px;
   margin-left: 0.35714rem;
@@ -789,7 +789,7 @@ Logo
     line-height: 26.6px;
     line-height: 1.9rem; }
     .logo a:after {
-      content: "BETA";
+      content: "EARLY ACCESS";
       font-size: 10px;
       margin-left: 5px;
       margin-left: 0.35714rem;
