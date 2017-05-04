@@ -31,7 +31,7 @@ Logo
     @include s-bigger;
 
     &:after{
-      content: "BETA";
+      content: "EARLY ACCESS";
       font-size: 10px;
       @include rem(margin-left, 5px);
       vertical-align: 5px;
