@@ -103,11 +103,13 @@ How it Works
   width: 100%;
   position: relative;
 
+  /*
   &:last-child{
     @include media($tablet-landscape){
       @include rem(margin-bottom, -110px);
     }
   }
+  */
 
   .text-block{
     @include media($tablet){
@@ -142,6 +144,123 @@ How it Works
         @include animation(fade-in-right 0.6s ease-in);
 
       }
+    }
+  }
+}
+
+/*-----------------------
+Pricing
+-----------------------*/
+.pricing-village-wrapper{
+  background-color: $blue-base;
+
+  .price-area{
+    @include media($tablet){
+      @include center;
+      @include rem(margin-top, 30px);
+      display: table;
+    }
+  }
+
+  h2, li{
+    color: $white-base;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  .text-block{
+    position: relative;
+    @include rem(margin-top, 30px);
+
+    @include media($tablet){
+      @include span-columns(6 of 12);
+      @include rem(margin-top, 20px);
+      vertical-align: middle;
+    }
+
+    li{
+      @include rem(margin-bottom, 15px);
+    }
+
+    img{
+      display: inline-block;
+      @include rem(margin-right, 10px);
+      width: 20px;
+      vertical-align: top;
+    }
+
+    p{
+      color: $white-base;
+      @include s-medium;
+      line-height: normal;
+      width: calc(100% - 50px);
+      display: inline-block;
+    }
+  }
+
+  .text-block, .pricing-block{
+    @include media($tablet){
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+
+.pricing-block{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  @include rem(margin-top, 30px);
+
+  @include media($tablet){
+    @include span-columns(6 of 12);
+    @include rem(margin-top, 0px);
+    vertical-align: middle;
+  }
+
+  &:after{
+    background-color: $blue-base;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 0 rgba(156,156,156,0.50);
+    color: $white-base;
+    content: "OR";
+    display: inline-block;
+    font-weight: $bold;
+    height: 65px;
+    @include vertical-horizontal-center;
+    line-height: 65px;
+    text-align: center;
+    width: 65px;
+  }
+
+  .price-block{
+    background-color: $white-base;
+    box-shadow: 0 2px 4px 0 rgba(180,180,180,0.50);
+    @include span-columns(6 of 12);
+    text-align: center;
+
+    h2{
+      color: $blue-base;
+      margin-bottom: 0px;
+    }
+
+    p{
+      @include s-base;
+    }
+
+    .charged{
+      background-color: $green-base;
+      color: $white-base;
+      @include rem(padding, 0px 10px);
+      font-weight: $bold;
+    }
+
+    .price{
+      @include rem(padding, 20px);
     }
   }
 }
