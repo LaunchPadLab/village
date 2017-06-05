@@ -158,7 +158,6 @@ Pricing
     @include media($tablet){
       @include center;
       @include rem(margin-top, 30px);
-      display: table;
     }
   }
 
@@ -208,8 +207,6 @@ Pricing
   }
 }
 
-
-
 .pricing-block{
   display: inline-block;
   position: relative;
@@ -257,10 +254,17 @@ Pricing
       color: $white-base;
       @include rem(padding, 0px 10px);
       font-weight: $bold;
+      margin-bottom: 0px;
     }
 
     .price{
       @include rem(padding, 20px);
+      height: 120px;
+
+      p{
+        margin-bottom: 0px;
+        line-height: normal;
+      }
     }
   }
 }
