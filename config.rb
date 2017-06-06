@@ -46,3 +46,5 @@ configure :build do
 end
 
 activate :sprockets
+
+activate :asset_hash
